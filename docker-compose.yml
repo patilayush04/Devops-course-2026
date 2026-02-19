@@ -5,7 +5,7 @@ services:
     build: ./server
     container_name: backend
     restart: always
-    env_file:
+    env-file:
       - ./server/.env
 
     ports:
@@ -15,7 +15,8 @@ services:
     build: 
       context: ./client
       args:
-        VITE_API_URL: http://54.198.161.185:5000/api
+        VITE_API_URL: http://54.196.38.15:5000/api
+        
     container_name: frontend
     restart: always
     ports:
