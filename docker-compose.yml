@@ -24,7 +24,7 @@ services:
     build: 
       context: ./client
       args:
-        VITE_API_URL: http://54.196.38.15:5000/api
+        VITE_API_URL: http://98.93.221.229:5000/api
 
     container_name: frontend
     restart: always
