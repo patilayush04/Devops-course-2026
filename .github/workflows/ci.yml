@@ -40,6 +40,6 @@ jobs:
       - name: "build backend image"
         run: docker build -t mern-backend ./server
 
-      - name: "build frontend image"
+      - name: "build fronteend image"
         run: docker build -t mern-frontend ./client
 
