@@ -10,6 +10,16 @@ services:
   #   volumes:
   #     - mongo-db:/data/db
 
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+
+    volumes:
+      - mongo-db:/data/db
+
   backend:
     build: ./server
     container_name: backend
@@ -21,10 +31,10 @@ services:
       - "5000:5000"
 
   frontend:
-    build: 
+    build:
       context: ./client
       args:
-        VITE_API_URL: http://98.93.221.229:5000/api
+          VITE_API_URL: http://3.91.255.94:5000/api
 
     container_name: frontend
     restart: always
@@ -34,5 +44,5 @@ services:
     depends_on:
       - backend
 
-# volumes:
-#   mongo-db:
+volumes:
+  mongo-db:
